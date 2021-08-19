@@ -1,0 +1,63 @@
+body{
+    background-color: #6850B1;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+}
+.landing-section{
+    background-image:url('./images/bg-desktop.svg');
+    height: calc(100vh - 20px);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position:center;
+}
+.landing-section .wrapper{
+    max-width: 1800px;
+    margin: -8px auto;
+    width:90%;
+}
+.landing-section header{
+    padding: 1%;
+    height:20px;
+}
+.landing-section .main-content{
+    display: flex;
+    justify-content: center;
+    margin-top:100px;
+    padding: 1%;
+    width:100%;
+}
+.landing-section .main-content .left{
+    width:50%;
+}
+.landing-section .main-content .left .img-container{
+    width:800px;
+}
+.landing-section .main-content .left .img-container img{
+    width:100%;
+}
+.landing-section .main-content .right{
+    width:50%;
+}
+.landing-section .main-content .right .text-container{
+    margin-top: 60px;
+}
+.landing-section .main-content .right .text-container h1{
+    max-width: 60%;
+    font-size: 48px;
+}
+.landing-section .main-content .right .text-container p{
+    font-size: 20px;
+    line-height: 28px;
+}
+.landing-section .main-content .right a.button{
+    padding: 18px 24px;
+    background-color:white;
+    color:#6850B1;
+    margin-top: 20px;
+    width: 160px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 50px;
+}
