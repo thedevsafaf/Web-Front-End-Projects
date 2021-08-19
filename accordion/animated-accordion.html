@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animated Accordion</title>
+    <style>
+        
+
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+        body{
+            color:white;
+            background-color:#000;
+        }
+
+
+        .accordion{
+            width: 100%;
+            padding: 18px;
+            background-color:#eee;
+            color:#444;
+            font-size: 20px;
+            font-weight:bold;
+            cursor: pointer;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            border-radius: 4px;
+            margin-bottom: 1px;
+        }
+        .accordion:hover, .active{
+            background-color: #ccc;
+        }
+        .accordion:after{
+            content:'\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+        }
+        .active:after{
+            content:'\2212';
+        }
+        .content-panel{
+            padding: 0 18px;
+            color:rgb(227, 253, 226);
+            font-size: 20px;
+            background-color: rgb(37, 34, 34);
+            font-family: 'Acme', sans-serif;
+            border-radius: 4px;
+            max-height:0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        a.button{
+            display: inline-block;
+            margin: 30px;
+            padding: 16px 20px;
+            background-color:orangered;
+            color:white;
+            text-decoration:none;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Animated Accordion using max-height and icons</p>
+    <button class="accordion">Topic 1</button>
+    <div class="content-panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Topic 2</button>
+    <div class="content-panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Topic 3</button>
+    <div class="content-panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Topic 4</button>
+    <div class="content-panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Topic 5</button>
+    <div class="content-panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <a href="accordion.html" class="button">Go back to Simple Accordion</a>
+
+    <script>
+
+        let accordion = document.getElementsByClassName("accordion");
+        
+        let i;
+
+        for (i=0;i<accordion.length;i++){
+
+            accordion[i].addEventListener("click", function(){
+
+            
+                this.classList.toggle("active");
+
+                let content_panel = this.nextElementSibling;
+
+                if(content_panel.style.maxHeight){
+                    content_panel.style.maxHeight = null;
+                }else{
+                    content_panel.style.maxHeight = content_panel.scrollHeight + "px"; 
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>
