@@ -1,0 +1,53 @@
+body{
+    background:#F0F0F0;
+}
+.main .wrapper{
+    max-width: 1400px;
+    margin:60px auto;
+    width:100%;
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    background-image:url('./images/bg-pattern-desktop.svg');
+    background-position: center;
+    background-size: cover;
+}
+.main .left{
+    width:60%;
+    padding:5% 5% 8%;
+}
+.main .left h1{
+    font-size: 58px;
+    letter-spacing: 20px;
+}
+.main .left h1 span{
+    color: #B99FA0;
+}
+.main .left p{
+    color: #B99FA0;
+    font-size: 14px;
+    letter-spacing:2px;
+    max-width: 500px;
+}
+.main .left .form-container{
+    margin-top:50px;
+    display: flex;
+}
+.main .left .form-container input{
+    border-radius: 30px;
+    padding: 16px 24px;
+    width: 400px;
+    border: 1px solid #B99FA0 ;
+}
+.main .left .form-container a.button{
+    border-radius: 30px;
+    padding: 16px 24px;
+    width: 40px;
+    background: linear-gradient(to bottom, #ff6699 0%, #ff99cc 100%);
+    border: 1px solid #B99FA0 ;
+    text-align: center;
+    margin-left:-60px;
+}
+.main .right{
+    width: 40%;
+}
