@@ -1,0 +1,73 @@
+body{
+    background:#E6EFF6;
+}
+#price .wrapper{
+    max-width: 900px;
+    margin: 100px auto;
+    width: 90%;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.top{
+    padding: 40px;
+    background:#fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.top h2{
+    color: #36A9A4;
+}
+.top h3{
+    color: #BCCD65;
+}
+.top p{
+    color: #ADB0B5;
+    line-height:24px;
+}
+.bottom{
+    display: flex;
+    width: 100%;    
+}
+.bottom .left{
+    background-color:#37B3B1;
+    width:50%;
+    color: #fff;
+    padding: 40px;
+    border-bottom-left-radius: 10px;
+}
+.bottom .left .price-title{
+    display: flex;
+}
+.bottom .left .price-title span{
+    font-size:42px;
+    font-weight: bold;
+}
+.bottom .left .price-title h3{
+    display: inline-block;
+    color:#66dce2;
+
+}
+.bottom .left a.button{
+    color:#fff;
+    width:240px;
+    padding: 16px 24px;
+    background: #BFDF32;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.bottom .right{
+    background-color:#4ABEBD;
+    width:50%;
+    color: #fff;
+    padding: 40px;
+    border-bottom-right-radius: 10px;
+}
+.bottom .right li{
+    list-style: none;
+    margin-bottom: 8px;
+    color:#b9ebee;
+}
