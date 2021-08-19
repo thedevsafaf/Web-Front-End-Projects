@@ -1,5 +1,7 @@
 # Web-Front-End-Projects
 
-This is my learning purpose front end project designs
+This is my learning purpose front end projects.
 
 inspired and learned from many websites and designs.
+
+Thank you all
