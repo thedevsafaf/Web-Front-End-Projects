@@ -1,0 +1,518 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+del {
+  text-decoration: line-through;
+}
+header,
+section,
+article,
+aside,
+nav,
+footer,
+address {
+  display: block;
+}
+body {
+  font-family: "product_sansregular";
+  font-size: 17px;
+  color: #333;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+input,
+textarea,
+select {
+  font-family: "product_sansregular";
+}
+a {
+  color: #333;
+}
+a:hover,
+.submit:hover {
+  filter: alpha(opacity = 85);
+  -moz-opacity: 0.85;
+  -khtml-opacity: 0.85;
+  opacity: 0.85;
+}
+.thumb {
+  display: block;
+}
+.thumb img {
+  display: block;
+  width: 100%;
+}
+p {
+  line-height: 1.6em;
+  font-size: 16px;
+  font-family: "product_sansregular";
+}
+.hidden {
+  display: none;
+}
+br.clear {
+  clear: both;
+  line-height: 0;
+}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+p,
+h1,
+h2,
+a,
+input {
+  font-family: "product_sansregular";
+  color: #000;
+}
+input::-webkit-input-placeholder {
+  color: #ffffff96;
+}
+input:-moz-placeholder {
+  color: #ffffff96;
+}
+
+/* Styles */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+header .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+header .logo-container h1 a {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+}
+
+header .logo-container h1 a img.logo {
+  display: inline-block;
+  width: 90%;
+  height: 100%;
+}
+
+header .logo-container h2 {
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  margin-left: -20px;
+}
+
+header .nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header .nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .nav ul li {
+  margin-right: 30px;
+}
+
+header .nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+/* Spotlight of the site */
+
+#spotlight {
+  background-image: url("../images/landing-page-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(100vh - 100px);
+}
+
+
+#spotlight .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#spotlight .container h2 {
+  margin-top: 10%;
+  color: white;
+  font-size: 36px;
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: bold;
+  max-width: 30%;
+  text-align: center;
+}
+
+#spotlight .container a.button {
+  display: inline-block;
+  padding:18px 36px;
+  margin:20px auto;
+  width:200px;
+  background-color:black;
+  color:#d3a457;
+  border:1px solid #d3a457;
+  border-radius: 30px;
+  text-align: center;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+/* Image Left Text Right using Flex */
+
+#main{
+  padding:7% 0 10%;
+  background-color: #000;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction:column;
+}
+
+#main .top-container{
+  display: flex;
+  width:1000px;
+  margin:90px auto; 
+}
+#main .top-container  .img-container{
+  width:50%;
+  margin-right:20px;
+
+}
+#main .top-container  .img-container img{
+  display:block;
+  width:100%;
+}
+#main .top-container  .img-container img:hover{
+  filter:opacity(60%);
+}
+#main .top-container  .text-container{
+  width: 100%;
+  padding: 2%;
+}
+#main .top-container  .text-container h2{
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#main .top-container  .text-container p{
+  max-width:100%;
+  color:rgb(199, 150, 25);
+  font-weight:bold;
+  font-size: 19px;
+  text-align: justify;
+}
+#main hr.divider {
+  border-bottom: 1px solid #5f5a53;
+  width: 100%;
+  margin:0 auto;
+}
+#main .bottom-container{
+  display: flex;
+  width:1000px;
+  margin:90px auto; 
+}
+#main .bottom-container  .img-container{
+  width:50%;
+  margin-left:20px;
+
+}
+#main .bottom-container  .img-container img{
+  display:block;
+  width:100%;
+}
+
+#main .bottom-container  .img-container img:hover{
+  filter:opacity(60%);
+}
+
+#main .bottom-container  .text-container{
+  width: 100%;
+  padding:0 2% 0 0;
+
+}
+#main .bottom-container  .text-container h2{
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#main .bottom-container  .text-container p{
+  max-width:100%;
+  color:rgb(199, 150, 25);
+  font-weight:bold;
+  font-size: 19px;
+  text-align: justify;
+}
+
+/* Grid using flex */
+
+#grid{
+  padding: 5%;
+  background: url('../images/grid-bg.jpg') no-repeat;
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#grid .container{
+  width: 1100px;
+  height:600px;
+  margin: 0 auto;
+  border:3px solid white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* glass effect */
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 1rem 0 rgba(214, 5, 92, 0.787); 
+  border-radius: 30px;
+
+}
+
+
+#grid .container .one{
+  width:260px;
+
+}
+#grid .container .one .img-container{
+  width:260px;
+  border: 5px solid white;
+}
+#grid .container .one .img-container img{
+  width:100%;
+  display: block;
+}
+#grid .container .one .img-container img:hover{
+  box-shadow: 0 0 1rem 0 rgba(218, 221, 44, 0.87);
+}
+#grid .container .one .text-container h3{
+  text-align: center;
+  color:#fff;
+  margin-top:10px;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 19px;
+}
+
+#grid .container .two{
+  width:260px;
+}
+#grid .container .two .img-container{
+  width:260px;
+  border: 5px solid white;
+}
+#grid .container .two .img-container img{
+  width:100%;
+  display: block;
+}
+#grid .container .two .img-container img:hover{
+  box-shadow: 0 0 1rem 0 rgba(218, 221, 44, 0.87);
+}
+#grid .container .two .text-container h3{
+  text-align: center;
+  color:#fff;
+  margin-top:10px;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 19px;
+}
+
+#grid .container .three{
+  width:260px;
+}
+#grid .container .three .img-container{
+  width:260px;
+  border: 5px solid white;
+}
+#grid .container .three .img-container img{
+  width:100%;
+  display: block;
+}
+#grid .container .three .img-container img:hover{
+  box-shadow: 0 0 1rem 0 rgba(218, 221, 44, 0.87);
+}
+#grid .container .three .text-container h3{
+  text-align: center;
+  color:#fff;
+  margin-top:10px;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 19px;
+}
+
+/* background-video */
+
+#videoDiv {
+  width: 100%; 
+  height: calc(100vh - 100px);
+  position: relative;
+}
+#videoDiv #video1 { 
+  margin: auto; 
+  display: block;
+}
+#videoDiv #videoMessage { 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  height: 100%;
+}
+
+#videoDiv #videoMessage *{
+  padding:0.4em; margin:0
+}
+#videoDiv #videoMessage {
+  text-shadow: 2px 2px 2px #69314D; 
+  color:white;z-index:99 
+}
+#videoDiv #videoMessage h1{
+  font-size: 2em;
+  color:black;
+  text-align:center;
+}
+#videoDiv #videoMessage a.button {
+  display: inline-block;
+  padding:18px 36px;
+  margin:20px auto;
+  width:200px;
+  background-color:black;
+  color:#d3a457;
+  border:1px solid #d3a457;
+  border-radius: 30px;
+  text-align: center;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+/* Slides */
+
+#slides{
+  padding: 7%;
+  background-color:#000;
+}
+#slides .wrapper{
+  display: flex;
+}
+#slides .left-container{
+  margin-right: 80px;
+}
+#slides .left-container p {
+  color:white;
+  font-size:22px;
+  padding:3%;
+  text-align: justify;
+
+}
+#slides .right-container{
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+#slides .right-container #slideshow {
+  margin-bottom: 5px;
+  width: 740px;
+  height: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#slides .right-container #slideshow img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+#slides .right-container .circle {
+  margin-right: 15px;
+  display: inline-block;
+  background-color: lightgrey;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+}
+
+#cards{
+  padding: 7%;
+}
+#cards .wrapper {
+  display: flex;
+}
+
+#cards .card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; 
+  width: 30%;
+  margin:0 10px;
+}
+#cards .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#cards .card .card-image{
+  border-radius: 5px 5px 0 0;
+  display: block;
+  width: 100%;
+}
+#cards .card .text-container{
+  padding: 10px 16px;
+}
+#cards .card .text-container h2{
+  color:rgb(27, 31, 54);
+  font-weight: bold;
+  text-shadow: #69314D;
+  font-size: 26px;
+  font-family: "RocknRoll One", sans-serif;
+}
+#cards .card .text-container p{
+  color:rgb(27, 31, 54);
+  font-weight: 800;
+  text-shadow: #69314D;
+  font-size: 22px;
+}
