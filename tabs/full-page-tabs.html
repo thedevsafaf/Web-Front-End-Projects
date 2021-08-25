@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Headers</title>
+</head>
+<style>
+    * {box-sizing: border-box}
+
+    body{
+        background-color: #000;
+        height: 100%;
+        margin:0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .tablink{
+        background-color: #555;
+        color:white;
+        float:left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width:25%;
+    }
+    .tablink:hover{
+        background-color: #777;
+    }
+    .tabcontent{
+        color: white;
+        display: none; 
+        padding: 300px 20px;
+        height: 100vh;
+    }
+    #name{
+        background-color: red;
+    }
+    #qualification{
+        background-color:green;
+    }
+    #experience{
+        background-color:blue;
+    }
+    #contact{
+        background-color:orange;
+    }
+
+
+</style>
+<body>
+
+    <button class="tablink" onclick="openDetails('name', this, 'red')" id="defaultOpen">Name</button>
+    <button class="tablink" onclick="openDetails('qualification', this, 'green')">Qualifications</button>
+    <button class="tablink" onclick="openDetails('experience', this, 'blue')">Experience</button>
+    <button class="tablink" onclick="openDetails('contact', this, 'orange')">Contact</button>
+
+
+
+    <div id="name" class="tabcontent">
+        <h1>Mohammed Safaf Pullithodika</h1>
+        <p>s/o Mohammed Haneefa Pullithodika</p>
+    </div>
+    <div id="qualification" class="tabcontent">
+        <h1>Bachelor of Engineering</h1>
+        <p>Safaf have graduated BE in CSE from T John Institute of Technology, Bangalore</p>
+    </div>
+    <div id="experience" class="tabcontent">
+        <h1>System Engineer at Infosys</h1>
+        <p>Safaf have worked as an intern in Talrop, Ernakulam</p>
+    </div>
+    <div id="contact" class="tabcontent">
+        <h1>Get in touch</h1>
+        <p>+91 8606352583</p>
+    </div>
+
+
+   
+
+    
+
+    <script>
+        function openDetails(detail, elmnt, color){
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName('tabcontent');
+            for(i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display="none";
+            }
+            tablinks = document.getElementsByClassName('tablink');
+            for(i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor= "";
+            }
+            document.getElementById(detail).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+        document.getElementById('defaultOpen').click();
+    </script>
+</body>
+
+</html>

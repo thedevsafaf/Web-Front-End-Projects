@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <style>
+        body{
+            background:#000;color: white;
+        }
+        .tab{
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button{
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            color: black;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .tab button:hover{
+            background-color: #ddd;
+        }
+        .tab button.active{
+            background-color: #ccc;
+        }
+        .tabcontent{
+            font-family: Arial, Helvetica, sans-serif;
+            padding:6px 12px;
+            border: 1px solid #ccc;
+            border-top: none; 
+            animation: fadeEffect 1s;   /* Fading effect takes 1 second */
+        }
+
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .top-right{
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .top-right:hover{
+            color: red;
+        }
+
+        a.button{
+            display: inline-block;
+            margin: 30px;
+            padding: 16px 20px;
+            background-color:orangered;
+            color:white;
+            text-decoration:none;
+            font-size: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Tab Links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openFriendTab(event,'safwan')">Safwan</button>
+        <button class="tablinks" onclick="openFriendTab(event,'ashik')">Ashik</button>
+        <button class="tablinks" onclick="openFriendTab(event,'niyas')">Niyas</button>
+        <button class="tablinks" onclick="openFriendTab(event,'ajmal')">Ajmal</button>
+        <button class="tablinks" onclick="openFriendTab(event,'safaf')" id="defaultOpen">Safaf</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="safwan" class="tabcontent">
+        <h3>Safwan</h3>
+        <p>Katta Chunk 1</p>
+        <span onclick="this.parentElement.style.display='none'" class="top-right">&times</span>
+    </div>
+
+    <div id="ashik" class="tabcontent">
+        <h3>Ashik</h3>
+        <p>Katta Chunk 2</p>
+        <span onclick="this.parentElement.style.display='none'" class="top-right">&times</span>
+
+    </div>
+
+    <div id="niyas" class="tabcontent">
+        <h3>Niyas</h3>
+        <p>Katta Chunk 3</p>
+        <span onclick="this.parentElement.style.display='none'" class="top-right">&times</span>
+
+    </div>
+
+    <div id="ajmal" class="tabcontent">
+        <h3>Ajmal</h3>
+        <p>Katta Chunk 4</p>
+        <span onclick="this.parentElement.style.display='none'" class="top-right">&times</span>
+        
+    </div>
+
+    <div id="safaf" class="tabcontent">
+        <h3>Safaf</h3>
+        <p>Katta Chunk Alla ...Its me</p>
+        <span onclick="this.parentElement.style.display='none'" class="top-right">&times</span>
+        
+    </div>
+
+    <a href="vertical-tabs.html" class="button">See Vertical Tabs</a>
+
+
+    <script>
+        function openFriendTab(evt, friendName) { 
+            
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i=0; i<tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+             // Get all elements with class="tablinks" and remove the class "active"
+             tablinks = document.getElementsByClassName("tablinks");
+             for (i=0; i<tablinks.length; i++) {
+                 tablinks[i].className = tablinks[i].className.replace("active","");    
+             }
+
+             // Show the current tab, and add an "active" class to the button that opened the tab
+             document.getElementById(friendName).style.display = "block";
+             evt.currentTarget.className += "active";
+
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+    </script>
+</body>
+</html>
