@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation with different styles</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        p{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            color:white;
+            background-color: #333;
+            padding:16px 20px;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            width:400px;
+        }
+        .nav{
+            height: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background: #111;
+            overflow-x: hidden;  /* disable horizontal scroll */
+            padding-top: 60px;
+        }
+        .nav a{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+        .sidenav1, .sidenav3, .sidenav4, .sidenav5{
+            width: 0; /* do changes with js */
+            transition:0.5s;
+        }
+        .sidenav5{
+            text-align: center;
+        }
+     
+        .sidenav1 a, .sidenav3 a, .sidenav4 a, .sidenav5 a{
+            transition:0.3s;
+        }
+
+        .sidenav2{
+            display: none;
+            width: 250px;
+        }
+
+        .sidenav1 a:hover,.sidenav2 a:hover,.sidenav3 a:hover, .sidenav4 a:hover, .sidenav5 a:hover  {
+            color: #f1f1f1;
+        }
+        .sidenav1 .close-btn,  .sidenav2 .close-btn, .sidenav3 .close-btn, .sidenav4 .close-btn, .sidenav5 .close-btn{
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main{
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+        @media screen and (max-height: 450px) {
+            .sidenav1, .sidenav2, .sidenav3, .sidenav4, .sidenav5 {padding-top: 15px;}
+            .sidenav1, .sidenav2 a, .sidenav3 a, .sidenav4 a, .sidenav5 a{font-size: 18px;}
+        }
+
+    </style>    
+</head>
+<body>
+    <!-- animated side navigation -->
+    <div class="sidenav1 nav right" id="mySideNav1">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNavWithAnimation()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- non animated side navigation -->
+    <div class="sidenav2 nav" id="mySideNav2">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNavWithoutAnimation()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+      <!-- push content side navigation (off-canvas)-->
+      <div class="sidenav3 nav" id="mySideNav3">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeByPushContent()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+      <!-- push content with opacity side navigation (off-canvas)-->
+    <div class="sidenav4 nav" id="mySideNav4">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeByPushContentWithOpacity()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+        <!-- fully sided navigation -->
+        <div class="sidenav5 nav" id="mySideNav5">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeFullySided()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+    <div class="container" id="main">
+        <p>Click on the buttons to see the different side navigations</p>
+        <button class="btn-primary" onclick="openNavWithAnimation()">Sidenav overlay with animation</button>
+        <button class="btn-primary" onclick="openNavWithoutAnimation()">Sidenav overlay without animation</button>
+        <button class="btn-primary" onclick="openByPushContent()">Sidenav push (off canvas)</button>
+        <button class="btn-primary" onclick="openByPushContentWithOpacity()">Sidenav push with opacity</button>
+        <button class="btn-primary" onclick="openFullySided()">Sidenav full-width</button>
+    </div>
+
+    <script>
+        function openNavWithAnimation(){
+            document.getElementById('mySideNav1').style.width = "250px";
+        }
+        function closeNavWithAnimation(){
+            document.getElementById('mySideNav1').style.width = "0";
+        }
+        function openNavWithoutAnimation(){
+            document.getElementById('mySideNav2').style.display = "block";
+        }
+        function closeNavWithoutAnimation(){
+            document.getElementById('mySideNav2').style.display = "none";
+        }
+        function openByPushContent(){
+            document.getElementById('mySideNav3').style.width = "250px";
+            document.getElementById('main').style.marginLeft = "250px";
+
+        }
+        function closeByPushContent(){
+            document.getElementById('mySideNav3').style.width = "0";
+            document.getElementById('main').style.marginLeft = "0";
+        }
+        function openByPushContentWithOpacity(){
+            document.getElementById('mySideNav3').style.width = "250px";
+            document.getElementById('main').style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(1,1,2,0.4)";
+
+        }
+        function closeByPushContentWithOpacity(){
+            document.getElementById('mySideNav3').style.width = "0";
+            document.getElementById('main').style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+        function openFullySided(){
+            document.getElementById('mySideNav5').style.width = "100%";
+        }
+        function closeFullySided(){
+            document.getElementById('mySideNav5').style.width = "0";
+        }
+    </script>
+</body>
+</html>

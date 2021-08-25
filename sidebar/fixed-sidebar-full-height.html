@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Fixed Sidebar with Full Height</title>
+    <style>
+        body {
+            font-family:'Trebuchet MS';
+        }
+        .sidenav{
+            height: 100%;
+            width: 180px;
+            background-color: #111;
+            padding-top:20px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+        }
+        .sidenav a{
+            padding: 16px 36px;
+            display: block;
+            color:#fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .sidenav a:hover {
+            color: #cac0c0;
+        }
+        .main{
+            margin-left: 180px;
+            font-size: 28px;
+            padding:0 10px;
+        }
+        @media screen and (max-width:450px){
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a{
+                font-size:18px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#about"><i class="fa fa-fw fa-wrench"></i> About</a>
+        <a href="#contact"><i class="fa fa-fw fa-phone"></i> Contact</a>
+        <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+    </div>
+    <div class="main">
+        <h2>Page Title</h2>
+        <p>Page Content</p>
+        <p>This sidebar is of full height (100%) and always shown.</p>
+        <p>Scroll down the page to see the result.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+</body>
+</html>

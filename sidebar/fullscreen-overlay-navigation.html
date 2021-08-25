@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Overlay Navigation</title>
+    <style>
+        body{
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            font-size: 23px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            color:white;
+            background-color: #333;
+            padding:16px 20px;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            width:400px;
+            margin: 30px auto;
+        }
+        .overlay {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        #nav1 {
+            height: 100%;
+            width: 0%;
+        }
+
+        #nav2 {
+            height: 0%;
+            width: 100%;
+        }
+        #nav3 {
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay-content a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay-content a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            text-decoration: none;
+        }
+        
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav1" class="overlay">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav1()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div id="nav2" class="overlay">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav2()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div id="nav3" class="overlay">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSlideWithoutAnimation()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="container" id="main">
+        <p>Click on the buttons to see the different full screen overlay navigations</p>
+        <button class="btn-primary" onclick="slideRight()">Slide right</button>
+        <button class="btn-primary" onclick="slideDown()">Slide down</button>
+        <button class="btn-primary" onclick="openSlideWithoutAnimation()">Show w/o animation</button>
+    </div>
+
+    <script>
+        function slideRight() {
+            document.getElementById('nav1').style.width = "100%";
+        }
+
+        function closeNav1() {
+            document.getElementById('nav1').style.width = "0%";
+        }
+        function slideDown() {
+            document.getElementById('nav2').style.height = "100%";
+        }
+        function closeNav2() {
+            document.getElementById('nav2').style.height = "0%";
+        }
+        function openSlideWithoutAnimation() {
+            document.getElementById('nav3').style.display = "block";
+        }
+        function closeSlideWithoutAnimation() {
+            document.getElementById('nav3').style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
